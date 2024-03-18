@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 12:06:46 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/03/18 15:00:54 by aerrfig          ###   ########.fr       */
+/*   Updated: 2024/03/18 15:30:05 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int		sorted(t_list *head);
 int		stack_len(t_list **head);
 int		parse_and_check(char **tmp, t_data *data);
 void	free_stack_a(t_list **list);
+void	free_stacks(t_data *data);
 void	indexing(t_data *data);
 int		bigger_than(t_list **head, int num);
 t_list	*get_last_node(t_list **head);
@@ -67,6 +68,9 @@ void	ft_rb(t_data *data, int put);
 void	ft_ra(t_data *data, int put);
 void	ft_rrb(t_data *data, int put);
 void	ft_rra(t_data *data, int put);
+void	ft_rrr(t_data *data);
+void	ft_rr(t_data *data);
+void	ft_ss(t_data *data);
 void	ft_putstr(char *str);
 int		ft_strlen(const char *s);
 char	*ft_strdup(const char *s);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:30:09 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/03/18 15:03:30 by aerrfig          ###   ########.fr       */
+/*   Updated: 2024/03/18 15:34:34 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,12 @@ int	exec_instra(char *str, t_data *data)
 		ft_rrb(data, 0);
 	else if (ft_strncmp("rra\n", str) == 0)
 		ft_rra(data, 0);
-	else if (ft_strncmp(0, str) == 2)
-		return (0);
+	else if (ft_strncmp("rrr\n", str) == 0)
+		ft_rrr(data);
+	else if (ft_strncmp("rr\n", str) == 0)
+		ft_rr(data);
+	else if (ft_strncmp("ss\n", str) == 0)
+		ft_ss(data);
 	else
 		return (ft_putstr("Error"), -1);
 	return (0);
@@ -75,14 +79,12 @@ int	check(t_data *data)
 	char	*ar;
 
 	ar = get_next_line(0);
-	exec_instra(ar, data);
-	free(ar);
 	while (ar)
 	{
-		ar = get_next_line(0);
 		if (exec_instra(ar, data))
 			return (0);
 		free(ar);
+		ar = get_next_line(0);
 	}
 	if (sorted(data->stack_a))
 		return (ft_putstr("OK"), 0);
@@ -104,13 +106,11 @@ int	main(int argc, char *argv[])
 	{
 		tmp = ft_split(argv[i], ' ');
 		if (!tmp)
-			return (0);
+			return (free_stacks(&data), free_2d(tmp), 0);
 		if (!parse_and_check(tmp, &data))
-			return (free_stack_a(&data.stack_a), 0);
+			return (free_stacks(&data), free_2d(tmp), 0);
 		free_2d(tmp);
 	}
-	if (sorted(data.stack_a))
-		return (free_stack_a(&data.stack_a), 0);
 	check(&data);
-	free_stack_a(&data.stack_a);
+	free_stacks(&data);
 }

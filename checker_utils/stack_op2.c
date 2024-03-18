@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_op2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:51:55 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/03/17 12:08:32 by aerrfig          ###   ########.fr       */
+/*   Updated: 2024/03/18 15:30:00 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_ss(t_data *data)
 {
 	ft_sa(data, 0);
 	ft_sb(data, 0);
-	ft_putstr("ss");
 }
 
 t_list	*get_last_node(t_list **head)
@@ -51,10 +50,8 @@ void	lst_add_back(t_list **head,	t_list *new_node)
 t_list	*get_last_before_node(t_list **head)
 {
 	t_list	*node;
-	t_list	*tmp;
 
 	node = *head;
-	tmp = *head;
 	if (!head)
 		return (NULL);
 	if (!*head)

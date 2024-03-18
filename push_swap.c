@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:30:09 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/03/18 14:58:37 by aerrfig          ###   ########.fr       */
+/*   Updated: 2024/03/18 15:39:25 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int	main(int argc, char *argv[])
 	{
 		tmp = ft_split(argv[i], ' ');
 		if (!tmp)
-			return (0);
+			return (free_stack_a(&data.stack_a), free_2d(tmp), 0);
 		if (!parse_and_check(tmp, &data))
-			return (free_stack_a(&data.stack_a), 0);
+			return (free_stack_a(&data.stack_a), free_2d(tmp), 0);
 		free_2d(tmp);
 	}
 	if (sorted(data.stack_a))

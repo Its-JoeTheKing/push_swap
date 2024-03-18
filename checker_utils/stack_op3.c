@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_op3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:13:04 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/03/18 15:04:40 by aerrfig          ###   ########.fr       */
+/*   Updated: 2024/03/18 15:15:37 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,10 @@ void	free_stack_a(t_list **list)
 		free((*list));
 		(*list) = next;
 	}
+}
+
+void	free_stacks(t_data *data)
+{
+	free_stack_a(&data->stack_a);
+	free_stack_a(&data->stack_b);
 }
