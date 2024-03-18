@@ -6,11 +6,24 @@
 /*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:30:09 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/03/15 15:24:58 by aerrfig          ###   ########.fr       */
+/*   Updated: 2024/03/18 14:58:37 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	free_2d(char **tmp)
+{
+	int	i;
+
+	i = 0;
+	while (tmp[i])
+	{
+		free(tmp[i]);
+		i++;
+	}
+	free(tmp);
+}
 
 int	main(int argc, char *argv[])
 {
@@ -29,11 +42,12 @@ int	main(int argc, char *argv[])
 		if (!tmp)
 			return (0);
 		if (!parse_and_check(tmp, &data))
-			return (free_stack_a(&data), 0);
+			return (free_stack_a(&data.stack_a), 0);
+		free_2d(tmp);
 	}
 	if (sorted(data.stack_a))
-		return (free_stack_a(&data), 0);
+		return (free_stack_a(&data.stack_a), 0);
 	indexing(&data);
 	sort(&data);
-	free_stack_a(&data);
+	free_stack_a(&data.stack_a);
 }

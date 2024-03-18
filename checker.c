@@ -6,11 +6,24 @@
 /*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:30:09 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/03/17 15:03:20 by aerrfig          ###   ########.fr       */
+/*   Updated: 2024/03/18 15:03:30 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
+
+void	free_2d(char **tmp)
+{
+	int	i;
+
+	i = 0;
+	while (tmp[i])
+	{
+		free(tmp[i]);
+		i++;
+	}
+	free(tmp);
+}
 
 int	ft_strncmp(const char *s1, const char *s2)
 {
@@ -68,7 +81,7 @@ int	check(t_data *data)
 	{
 		ar = get_next_line(0);
 		if (exec_instra(ar, data))
-			return (free_stack_a(data), 0);
+			return (0);
 		free(ar);
 	}
 	if (sorted(data->stack_a))
@@ -93,9 +106,11 @@ int	main(int argc, char *argv[])
 		if (!tmp)
 			return (0);
 		if (!parse_and_check(tmp, &data))
-			return (free_stack_a(&data), 0);
+			return (free_stack_a(&data.stack_a), 0);
+		free_2d(tmp);
 	}
 	if (sorted(data.stack_a))
-		return (free_stack_a(&data), 0);
+		return (free_stack_a(&data.stack_a), 0);
 	check(&data);
+	free_stack_a(&data.stack_a);
 }

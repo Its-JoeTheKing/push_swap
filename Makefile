@@ -14,7 +14,7 @@ bonus_objs = ${bonus_srcs:.c=.o}
 header = push_swap.h
 header_bns = push_swap_bonus.h
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 name = push_swap
 checker = checker
 

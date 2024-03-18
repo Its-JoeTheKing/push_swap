@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 12:06:46 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/03/18 14:08:19 by codespace        ###   ########.fr       */
+/*   Updated: 2024/03/18 15:00:54 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	lst_add_front(t_list **head, t_list *new_node);
 int		sorted(t_list *head);
 int		stack_len(t_list **head);
 int		parse_and_check(char **tmp, t_data *data);
-void	free_stack_a(t_data *data);
+void	free_stack_a(t_list **list);
 void	indexing(t_data *data);
 int		bigger_than(t_list **head, int num);
 t_list	*get_last_node(t_list **head);

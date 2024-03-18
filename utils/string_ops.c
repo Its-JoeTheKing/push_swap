@@ -6,7 +6,7 @@
 /*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:57:33 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/03/15 14:10:27 by aerrfig          ###   ########.fr       */
+/*   Updated: 2024/03/18 14:59:20 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ int	is_valid_string(char *str)
 
 int	parse_and_check(char **tmp, t_data *data)
 {
-	int	j;
-	int	num;
+	int		j;
+	int		num;
 
 	j = 0;
 	while (tmp[j])
