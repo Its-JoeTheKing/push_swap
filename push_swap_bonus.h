@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 12:06:46 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/03/17 15:13:21 by aerrfig          ###   ########.fr       */
+/*   Updated: 2024/03/18 14:08:19 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
-# define malloc(X) NULL
 
 typedef struct s_list
 {
