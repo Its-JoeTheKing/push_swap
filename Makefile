@@ -24,7 +24,7 @@ bonus: $(checker)
 utils/%.o: utils/%.c ${header}
 	${CC} ${CFLAGS} -c $< -o $@
 
-checker_utils/%.o: checker_utils/%.c ${header}
+checker_utils/%.o: checker_utils/%.c ${header_bns}
 	${CC} ${CFLAGS} -c $< -o $@
 
 $(checker): $(bonus_objs) $(header_bns)

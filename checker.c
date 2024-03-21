@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:30:09 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/03/18 15:34:34 by codespace        ###   ########.fr       */
+/*   Updated: 2024/03/21 14:53:21 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	check(t_data *data)
 	while (ar)
 	{
 		if (exec_instra(ar, data))
-			return (0);
+			return (free(ar) ,0);
 		free(ar);
 		ar = get_next_line(0);
 	}
@@ -105,7 +105,7 @@ int	main(int argc, char *argv[])
 	while (++i < argc)
 	{
 		tmp = ft_split(argv[i], ' ');
-		if (!tmp)
+		if (!tmp || !tmp[0])
 			return (free_stacks(&data), free_2d(tmp), 0);
 		if (!parse_and_check(tmp, &data))
 			return (free_stacks(&data), free_2d(tmp), 0);
