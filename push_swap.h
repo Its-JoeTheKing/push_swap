@@ -6,7 +6,7 @@
 /*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 15:22:38 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/03/21 14:54:30 by aerrfig          ###   ########.fr       */
+/*   Updated: 2024/03/21 15:14:42 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	lst_add_front(t_list **head, t_list *new_node);
 int		sorted(t_list *head);
 int		stack_len(t_list **head);
 int		parse_and_check(char **tmp, t_data *data);
-void	free_stack_a(t_list **list);
+void	free_stack_a(t_list **list, int isError);
 void	indexing(t_data *data);
 int		bigger_than(t_list **head, int num);
 t_list	*get_last_node(t_list **head);

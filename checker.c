@@ -6,7 +6,7 @@
 /*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:30:09 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/03/21 14:53:21 by aerrfig          ###   ########.fr       */
+/*   Updated: 2024/03/21 15:18:30 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	check(t_data *data)
 	while (ar)
 	{
 		if (exec_instra(ar, data))
-			return (free(ar) ,0);
+			return (free(ar), 0);
 		free(ar);
 		ar = get_next_line(0);
 	}
@@ -101,16 +101,16 @@ int	main(int argc, char *argv[])
 	data.stack_b = 0;
 	i = 0;
 	if (argc < 2)
-		return (0);
+		return (write(2, "Error", 5), -1);
 	while (++i < argc)
 	{
 		tmp = ft_split(argv[i], ' ');
 		if (!tmp || !tmp[0])
-			return (free_stacks(&data), free_2d(tmp), 0);
+			return (free_stacks(&data, 1), free_2d(tmp), -1);
 		if (!parse_and_check(tmp, &data))
-			return (free_stacks(&data), free_2d(tmp), 0);
+			return (free_stacks(&data, 1), free_2d(tmp), -1);
 		free_2d(tmp);
 	}
 	check(&data);
-	free_stacks(&data);
+	free_stacks(&data, 0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:30:09 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/03/18 15:39:25 by codespace        ###   ########.fr       */
+/*   Updated: 2024/03/21 15:18:46 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,19 @@ int	main(int argc, char *argv[])
 	data.stack_b = 0;
 	i = 0;
 	if (argc < 2)
-		return (0);
+		return (write(2, "Error", 5), -1);
 	while (++i < argc)
 	{
 		tmp = ft_split(argv[i], ' ');
-		if (!tmp)
-			return (free_stack_a(&data.stack_a), free_2d(tmp), 0);
+		if (!tmp || !tmp[0])
+			return (free_stack_a(&data.stack_a, 1), free_2d(tmp), -1);
 		if (!parse_and_check(tmp, &data))
-			return (free_stack_a(&data.stack_a), free_2d(tmp), 0);
+			return (free_stack_a(&data.stack_a, 1), free_2d(tmp), -1);
 		free_2d(tmp);
 	}
 	if (sorted(data.stack_a))
-		return (free_stack_a(&data.stack_a), 0);
+		return (free_stack_a(&data.stack_a, 1), 0);
 	indexing(&data);
 	sort(&data);
-	free_stack_a(&data.stack_a);
+	free_stack_a(&data.stack_a, 0);
 }
