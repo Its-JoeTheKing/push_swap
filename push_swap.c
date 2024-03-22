@@ -46,7 +46,7 @@ int	main(int argc, char *argv[])
 		free_2d(tmp);
 	}
 	if (sorted(data.stack_a))
-		return (free_stack_a(&data.stack_a, 1), 0);
+		return (free_stack_a(&data.stack_a, 0), 0);
 	indexing(&data);
 	sort(&data);
 	free_stack_a(&data.stack_a, 0);
